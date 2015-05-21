@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">博君一笑</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+	<string name="text_url">http://japi.juhe.cn/joke/content/text.from?key=3f0765cec703ecbebc4d313bdc251ffb&amp;dtype=json&amp;pagesize=20&amp;page= </string>
+   
+    <string name="pic_url">http://japi.juhe.cn/joke/img/text.from?key=3f0765cec703ecbebc4d313bdc251ffb&amp;dtype=json&amp;pagesize=20&amp;page= </string>
+    <string name="test_text">http://192.168.1.102:8080/joke.txt</string>
+    <string name="test_pic">http://192.168.1.102:8080/picJoke.txt</string>
+	<string name="joke_text">幽你一默</string>
+	<string name="joke_pic">搞笑趣图</string>
+	<string name="about">关于</string>
+	<string name="setting">设置</string>
+	<string name="exit">退出软件</string>
+	<string name="switchmode">夜间模式切换</string>
+	<string name="version">版本号</string>
+	<string name="version_no">1.1.0</string>
+	<string name="clearcache">清除缓存</string>
+</resources>
