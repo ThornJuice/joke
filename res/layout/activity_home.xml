@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?attr/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/titlebackground" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/ib_one_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"
+            android:background="?attr/titlebackground"
+            android:src="@drawable/one_more_menu" 
+            android:contentDescription="@string/app_name"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/dividebackground" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpViewPager1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+       android:background="?attr/dividebackground" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/titlebackground" >
+
+        <TextView
+            android:id="@+id/tvTag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/joke_text"
+            android:textColor="?attr/textColor_selected"
+            android:textSize="?attr/textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?attr/dividebackground" />
+
+        <TextView
+            android:id="@+id/tvTag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/joke_pic"
+            android:textSize="?attr/textSize" />
+    </LinearLayout>
+
+</LinearLayout>
