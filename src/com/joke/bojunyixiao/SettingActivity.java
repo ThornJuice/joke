@@ -28,14 +28,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 		on_off = sp.getBoolean("on_off", false);
-		
-		if (on_off == false) {
-			this.setTheme(R.style.MyLightTheme);
-		}else{
-			this.setTheme(R.style.MyNightTheme);
-		}
-
-		setContentView(R.layout.setting_activity);	
+	    setContentView(R.layout.setting_activity);	
 		tv_version=(TextView)findViewById(R.id.tv_version);
 		tv_version.setText(getVersion());
 		iv_switch = (ImageView) findViewById(R.id.iv_switch);
@@ -66,11 +59,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 			return "δ֪";
 		}
 	}
-@Override
-protected void onResume() {
-	
-	super.onResume();
-}
+
 	@Override
 	public void onClick(View v) {
 

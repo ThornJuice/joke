@@ -73,7 +73,6 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	private List<PicJoke> refreshPicJokes;
 	private static int page = 1;
 	private static int picPage = 1;
-	boolean isRefresh = true;
 	private SharedPreferences sp;
 	private boolean on_off;
 	private boolean flag;
@@ -84,14 +83,14 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		sp = getSharedPreferences("config", MODE_PRIVATE);
+		/*sp = getSharedPreferences("config", MODE_PRIVATE);
 		on_off = sp.getBoolean("on_off", false);
 		flag=on_off;
 		if (on_off == false) {
 			this.setTheme(R.style.MyLightTheme);
 		}else{
 			this.setTheme(R.style.MyNightTheme);
-		}
+		}*/
 		setContentView(R.layout.activity_home);
 		timer=new Timer();
 		ib_one_more=(ImageButton) findViewById(R.id.ib_one_more);
@@ -103,14 +102,6 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 				startActivity(intent);
 			}});
 		
-/*		// 设置抽屉菜单
-				slidingMenu = new SlidingMenu(this);
-				slidingMenu.setMode(SlidingMenu.LEFT);
-				slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN); // 触摸边界拖出菜单
-				slidingMenu.setMenu(R.layout.slidingmenu_left);
-				slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-				// 将抽屉菜单与主页面关联起来
-				slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);*/
 		tvTag1 = (TextView) findViewById(R.id.tvTag1);
 		tvTag2 = (TextView) findViewById(R.id.tvTag2);
 
@@ -502,18 +493,6 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 			tvTag1.setTextColor(Color.BLACK);
 			break;
 		}
-	}
-	@Override
-	protected void onResume() {
-		
-		super.onResume();
-		sp = getSharedPreferences("config", MODE_PRIVATE);
-		on_off = sp.getBoolean("on_off", false);
-		if(flag!=on_off){
-			finish();
-			Intent intent=new Intent(HomeActivity.this,HomeActivity.class);
-			startActivity(intent);
-		}	
 	}
 	@Override
 	public void onBackPressed() {
