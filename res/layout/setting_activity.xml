@@ -13,6 +13,8 @@
         android:background="?attr/titlebackground" >
 
         <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -59,6 +61,7 @@
        android:background="?attr/dividebackground" />
 
     <RelativeLayout
+        android:id="@+id/rl_clearCache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/one_more_background" >
@@ -73,14 +76,16 @@
             android:textColor="?attr/textColor"
             android:textSize="18sp" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/tv_cacheSize"
             android:contentDescription="@string/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:paddingRight="10dp"
-            android:src="@drawable/one_details_page_arrowhead" />
+            android:text="0"
+             />
     </RelativeLayout>
 
     <View

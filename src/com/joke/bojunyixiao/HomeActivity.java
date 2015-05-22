@@ -16,6 +16,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -73,24 +75,18 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	private List<PicJoke> refreshPicJokes;
 	private static int page = 1;
 	private static int picPage = 1;
-	private SharedPreferences sp;
-	private boolean on_off;
-	private boolean flag;
 	private ImageButton ib_one_more;
 	protected static final String tag = "HomeActivity";
-
+    private Handler handler=new Handler(){
+    	@Override
+    	public void handleMessage(Message msg) {
+    		
+    		ptrlvAlljokes.setAdapter(textJokeAdapter);
+    	}
+    }; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		/*sp = getSharedPreferences("config", MODE_PRIVATE);
-		on_off = sp.getBoolean("on_off", false);
-		flag=on_off;
-		if (on_off == false) {
-			this.setTheme(R.style.MyLightTheme);
-		}else{
-			this.setTheme(R.style.MyNightTheme);
-		}*/
 		setContentView(R.layout.activity_home);
 		timer=new Timer();
 		ib_one_more=(ImageButton) findViewById(R.id.ib_one_more);
@@ -109,6 +105,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 		tvTag2.setOnClickListener(this);
 
 		views = initView();
+		//初始化笑话集合
 		PicJokes = new ArrayList<PicJoke>();
 		jokeLists = new ArrayList<TextJoke>();
 		vp = (ViewPager) findViewById(R.id.vpViewPager1);
@@ -117,9 +114,9 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 		vp.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
-			public void onPageSelected(int arg0) {
+			public void onPageSelected(int position) {
 
-				switch (arg0) {
+				switch (position) {
 				case 0:
 					tvTag1.setTextColor(getResources().getColor(R.color.blue));
 					tvTag2.setTextColor(Color.BLACK);
@@ -155,7 +152,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 		ptrlvAlljokes = (PullToRefreshListView) v1
 				.findViewById(R.id.ptrlvAllJokes);
 		ptrlvAlljokes.setMode(Mode.PULL_FROM_START);
-		ptrlvAlljokes.setAdapter(textJokeAdapter);
+		//ptrlvAlljokes.setAdapter(textJokeAdapter);
 	
 		ptrlvAlljokes.setOnRefreshListener(new OnRefreshListener<ListView>() {
 
@@ -234,14 +231,14 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	public void getPicByVolley(Context context) {
 		RequestQueue requestQueue = Volley.newRequestQueue(context);
 		String prefixPic=getString(R.string.pic_url);
-		//String url = prefixPic+1 ;
-		String url=getString(R.string.test_pic);
+		String url = prefixPic+1 ;
+		//String url=getString(R.string.test_pic);
 		MyJsonObjectRequest jor = new MyJsonObjectRequest(0, url,
 				new Listener<JSONObject>() {
 
 					@Override
 					public void onResponse(JSONObject json) {
-						Log.e(tag, json.toString());
+						//Log.e(tag, json.toString());
 
 						try {
 							JSONObject result = json.getJSONObject("result");
@@ -283,7 +280,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 
 					@Override
 					public void onResponse(JSONObject json) {
-						Log.e(tag, json.toString());
+						//Log.e(tag, json.toString());
 
 						try {
 							JSONObject result = json.getJSONObject("result");
@@ -325,14 +322,14 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	public void getJsonByVolly(Context context) {
 		RequestQueue requestQueue = Volley.newRequestQueue(context);
 		String prefixText=getString(R.string.text_url);
-		//String url = prefixText+1 ;
-		String url=getString(R.string.test_text);
+		String url = prefixText+1 ;
+		//String url=getString(R.string.test_text);
 		MyJsonObjectRequest jor = new MyJsonObjectRequest(0, url,
 				new Listener<JSONObject>() {
 
 					@Override
 					public void onResponse(JSONObject json) {
-						// Log.e(tag, json.toString());
+						Log.e(tag, json.toString());
 						try {
 							JSONObject result = json.getJSONObject("result");
 							JSONArray items = result.getJSONArray("data");
@@ -343,7 +340,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 								joke.setText(item.optString("content"));
 								jokeLists.add(joke);
 							}
-
+							handler.sendEmptyMessage(0);
 						} catch (JSONException e) {
 
 							e.printStackTrace();
@@ -440,6 +437,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 	public List<View> initView() {
 
 		views = new ArrayList<View>();
+
 		views.add(LayoutInflater.from(this).inflate(R.layout.all_jokes, null));
 		views.add(LayoutInflater.from(this).inflate(R.layout.pic_jokes, null));
 		return views;

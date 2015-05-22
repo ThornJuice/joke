@@ -11,6 +11,8 @@
         android:background="?attr/titlebackground" >
 
         <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -19,6 +21,8 @@
             android:textSize="20sp" />
 
         <ImageButton
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:id="@+id/ib_one_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,6 +58,8 @@
         android:background="?attr/titlebackground" >
 
         <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:id="@+id/tvTag1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +68,7 @@
             android:gravity="center"
             android:text="@string/joke_text"
             android:textColor="?attr/textColor_selected"
-            android:textSize="?attr/textSize" />
+            android:textSize="20sp" />
 
         <View
             android:layout_width="1dp"
@@ -70,6 +76,8 @@
             android:background="?attr/dividebackground" />
 
         <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:id="@+id/tvTag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +85,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/joke_pic"
-            android:textSize="?attr/textSize" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

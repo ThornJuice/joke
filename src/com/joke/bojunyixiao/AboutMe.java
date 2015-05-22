@@ -10,6 +10,6 @@ public class AboutMe extends BaseActivity{
 protected void onCreate(Bundle savedInstanceState) {	
 	super.onCreate(savedInstanceState);
 	requestWindowFeature(Window.FEATURE_NO_TITLE);
-	setContentView(R.layout.about_me);
+	setContentView(R.layout.splash);
 }
 }

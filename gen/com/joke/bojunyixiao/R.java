@@ -357,23 +357,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int indicator_arrow=0x7f020005;
         public static final int indicator_bg_bottom=0x7f020006;
         public static final int indicator_bg_top=0x7f020007;
-        public static final int one_details_page_arrowhead=0x7f020008;
-        public static final int one_details_page_copyright=0x7f020009;
-        public static final int one_microblog_button=0x7f02000a;
-        public static final int one_more_apply=0x7f02000b;
-        public static final int one_more_apply_press_down=0x7f02000c;
-        public static final int one_more_background=0x7f02000d;
-        public static final int one_more_menu=0x7f02000e;
-        public static final int setting=0x7f02000f;
-        public static final int shadow=0x7f020010;
-        public static final int splash=0x7f020011;
-        public static final int switch_off=0x7f020012;
-        public static final int switch_on=0x7f020013;
-        public static final int temp=0x7f020014;
-        public static final int user_default_icon=0x7f020015;
+        public static final int maomi=0x7f020008;
+        public static final int one_details_page_arrowhead=0x7f020009;
+        public static final int one_details_page_copyright=0x7f02000a;
+        public static final int one_microblog_button=0x7f02000b;
+        public static final int one_more_apply=0x7f02000c;
+        public static final int one_more_apply_press_down=0x7f02000d;
+        public static final int one_more_background=0x7f02000e;
+        public static final int one_more_menu=0x7f02000f;
+        public static final int setting=0x7f020010;
+        public static final int shadow=0x7f020011;
+        public static final int splash=0x7f020012;
+        public static final int switch_off=0x7f020013;
+        public static final int switch_on=0x7f020014;
+        public static final int temp=0x7f020015;
+        public static final int user_default_icon=0x7f020016;
     }
     public static final class id {
-        public static final int action_settings=0x7f05002c;
+        public static final int action_settings=0x7f05002e;
         public static final int both=0x7f050008;
         public static final int disabled=0x7f050005;
         public static final int fl_inner=0x7f050021;
@@ -402,20 +403,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pull_to_refresh_text=0x7f050024;
         public static final int right=0x7f050001;
         public static final int rl_about=0x7f05001e;
-        public static final int rl_exit=0x7f050029;
+        public static final int rl_clearCache=0x7f050028;
+        public static final int rl_exit=0x7f05002b;
         public static final int rl_setting=0x7f05001c;
         public static final int rotate=0x7f05000c;
         public static final int scrollview=0x7f050010;
         public static final int selected_view=0x7f050004;
-        public static final int slidingmenumain=0x7f05002b;
+        public static final int slidingmenumain=0x7f05002d;
         public static final int topBar=0x7f050012;
         public static final int tvDate=0x7f050019;
         public static final int tvTag1=0x7f050015;
         public static final int tvTag2=0x7f050016;
         public static final int tvText=0x7f05001b;
         public static final int tvTitle=0x7f050018;
-        public static final int tv_exit=0x7f05002a;
-        public static final int tv_version=0x7f050028;
+        public static final int tv_cacheSize=0x7f050029;
+        public static final int tv_exit=0x7f05002c;
+        public static final int tv_version=0x7f05002a;
         public static final int vpViewPager1=0x7f050014;
         public static final int webview=0x7f05000f;
     }
@@ -432,6 +435,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pull_to_refresh_header_vertical=0x7f030009;
         public static final int setting_activity=0x7f03000a;
         public static final int slidingmenumain=0x7f03000b;
+        public static final int splash=0x7f03000c;
     }
     public static final class menu {
         public static final int home=0x7f0a0000;
